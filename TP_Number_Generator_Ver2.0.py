@@ -35,6 +35,6 @@ if st.button("🎯 生成 TP_Number"):
         second = given_parts[1][0].upper() if len(given_parts) > 1 else given_parts[0][1].lower()
         fn = (first + second).strip()
 
-        tp_number = f"{surname_fmt}{fn}-{mmdd}-{phone_last4}"
+        tp_number = f"{surname_fmt}{fn}-{yymm}-{phone_last4}"
         st.success("✅ 生成成功！你的 TP_Number 為：")
         st.code(tp_number)
