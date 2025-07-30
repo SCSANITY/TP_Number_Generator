@@ -9,7 +9,7 @@ st.markdown("請依照以下格式填寫，系統將自動生成 TP_Number。")
 # 輸入欄位
 surname = st.text_input("1. Surname（姓）", placeholder="如：Chen").strip().capitalize()
 given_name = st.text_input("2. Given Name（名，空格分隔）", placeholder="如：Da Wen").strip()
-birthday = st.text_input("3. Birthday（格式 YYYY-MM-DD）", placeholder="2000-05-14").strip()
+birthday = st.text_input("3. Birthday（格式 YYYY-MM）", placeholder="2000-05").strip()
 phone_last4 = st.text_input("4. Phone 後 4 碼", placeholder="如：1234").strip()
 
 # 按鈕觸發
@@ -18,10 +18,10 @@ if st.button("🎯 生成 TP_Number"):
         st.error("請完整填寫所有欄位")
     else:
         try:
-            birth_date = datetime.datetime.strptime(birthday, "%Y-%m-%d")
+            birth_date = datetime.datetime.strptime(birthday, "%Y-%m")
             yymm = birth_date.strftime("%y%m")
         except:
-            st.error("生日格式錯誤，請使用 YYYY-MM-DD")
+            st.error("生日格式錯誤，請使用 YYYY-MM")
             st.stop()
 
         if not (phone_last4.isdigit() and len(phone_last4) == 4):
