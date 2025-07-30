@@ -19,7 +19,7 @@ if st.button("🎯 生成 TP_Number"):
     else:
         try:
             birth_date = datetime.datetime.strptime(birthday, "%Y-%m-%d")
-            mmdd = birth_date.strftime("%m%d")
+            yymm = birth_date.strftime("%y%m")
         except:
             st.error("生日格式錯誤，請使用 YYYY-MM-DD")
             st.stop()
