@@ -32,7 +32,7 @@ if st.button("🎯 生成 TP_Number"):
         given_parts = given_name.split()
 
         first = given_parts[0][0].upper()
-        second = given_parts[1][0].upper() if len(given_parts) > 1 else given_parts[0][1].upper()
+        second = given_parts[1][0].upper() if len(given_parts) > 1 else given_parts[0][1].lower()
         fn = (first + second).strip()
 
         tp_number = f"{surname_fmt}{fn}-{mmdd}-{phone_last4}"
